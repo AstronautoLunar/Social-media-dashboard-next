@@ -1,0 +1,87 @@
+div.ButtonThemeOn {
+
+    span.text {
+        color: var(--dark-grayish-blue-text);
+    }
+
+    div.button {
+        background-image: linear-gradient(to right, var(--toggle-dark-linear-gradient-from), var(--toggle-dark-linear-gradient-to));
+        background-color: transparent;
+
+        
+        div.circle {
+            background-color: var(--very-dark-blue-top-bg-pattern);
+            
+            position: relative;
+            left: 0;
+        }
+    }
+}
+
+div.ButtonThemeOn,
+div.ButtonThemeOff
+{
+    justify-content: center;
+    
+    
+    span.text {
+        margin-right: 1rem;
+
+        font-weight: 700;
+    }
+    
+    div.button {
+        width: 4rem;        
+        
+        padding: 0.2rem;
+        
+        div.circle {
+            width: 1.75rem;
+            height: 1.75rem;
+
+            transition: all 200ms;
+        }
+    }
+    
+    div.button,
+    div.circle
+    {
+        border-radius: 2.5rem;
+    }
+}
+
+div.ButtonThemeOff {
+    span.text {
+        color: var(--toggle-light);
+    }
+    
+    div.button {
+        background-image: none;
+        background-color: var(--toggle-light);
+        
+        
+        div.circle {
+            background-color: var(--very-pale-blue);
+            
+            position: relative;
+            left: 1.75rem;
+        }
+    }
+}
+
+div.ButtonThemeOn,
+div.ButtonThemeOff
+{
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 684px) {
+    div.ButtonThemeOn,
+    div.ButtonThemeOff
+    {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+}
