@@ -7,7 +7,6 @@ div.CardPrimary {
 
     justify-content: center;
     
-    
     div.border {
         height: 0.3rem;
         
@@ -90,4 +89,28 @@ div.followers
 
 div.CardPrimary:last-of-type {
     margin-right: 0;
+}
+
+@media screen and (max-width: 1092px) {
+    div.CardPrimary {
+        width: 45%;
+
+        margin: 1rem 0;
+
+        justify-content: between;
+
+        flex: none;
+    }
+}
+
+@media screen and (max-width: 556px) {
+    div.CardPrimary {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    div.CardPrimary:last-of-type {
+        margin-bottom: 2rem;
+    }
 }

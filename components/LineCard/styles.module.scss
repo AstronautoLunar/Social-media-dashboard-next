@@ -12,10 +12,18 @@ div.cards
 
 div.cards {
     width: 100%;
+
+    flex-wrap: wrap;
 }
 
 @media screen and (max-width: 684px) {
     div.LineCard {
         margin: 30px 0;
+    }
+}
+
+@media screen and (max-width: 1092px) {
+    div.cards {
+        justify-content: space-between;
     }
 }
