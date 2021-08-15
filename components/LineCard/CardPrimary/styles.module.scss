@@ -1,0 +1,95 @@
+$border-radius-box:  0.5rem;
+
+div.CardPrimary {
+    flex: 1;
+
+    margin-right: 2rem;
+
+    justify-content: center;
+    
+    
+    div.border {
+        height: 0.3rem;
+        
+        border-top-left-radius: $border-radius-box;
+        border-top-right-radius: $border-radius-box;
+    }
+    
+    div.border,
+    div.content
+    {
+        width: 100%;
+    }
+    
+    div.content {
+        height: 12.5rem;
+        
+        justify-content: space-around;
+        
+        background-color: var(--light-grayish-blue-card-bg);
+        
+        border-bottom-left-radius: $border-radius-box;
+        border-bottom-right-radius: $border-radius-box;
+        
+        div.socialNetwork {
+
+            span.textUserNickName {
+                font-weight: 700;
+                
+                margin-left: 10px;
+                
+                color: var(--very-dark-blue-text);
+            }
+        }
+
+        div.followers {
+
+            span.followersNumber {
+                font-size: 3rem;
+                font-weight: 700;
+
+                color: var(--very-dark-blue-text);
+            }
+
+            span.followersType {
+                letter-spacing: 4px;
+
+                font-size: 0.8rem;
+
+                color: var(--dark-grayish-blue-text);
+            }
+        }
+
+        div.growth {
+            // width: 5rem;
+            
+            justify-content: space-between;
+
+            div.image {
+                
+            }
+        }
+    }
+}
+
+div.socialNetwork,
+div.CardPrimary,
+div.content, 
+div.followers,
+div.growth,
+div.image
+{
+    display: flex;
+    align-items: center;
+}
+
+div.CardPrimary,
+div.content, 
+div.followers
+{
+    flex-direction: column;
+}
+
+div.CardPrimary:last-of-type {
+    margin-right: 0;
+}
