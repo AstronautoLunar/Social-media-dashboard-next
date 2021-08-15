@@ -18,7 +18,7 @@ type HeaderData = {
     textButton: string;
 }
 
-export default function Header({ 
+export default function HeaderCard({ 
     title,
     toggleText,
     smallText, 

@@ -1,4 +1,4 @@
-import Header from './Header';
+import HeaderCard from './HeaderCard';
 
 import styles from './styles.module.scss';
 
@@ -23,7 +23,7 @@ export default function LineCard({
 }: LineCardData) {
     return (
         <div className={styles.LineCard}>
-            <Header
+            <HeaderCard
                 title={ title }
                 toggleText={ toggleText }
                 smallText={ smallText }

@@ -14,12 +14,13 @@ export default function ButtonTheme({
     return (
 
         <div className={
-            value
-            ?
-            styles.ButtonThemeOn
-            :
-            styles.ButtonThemeOff
-            }>
+                value
+                ?
+                styles.ButtonThemeOn
+                :
+                styles.ButtonThemeOff
+            }
+        >
             <span className={styles.text}>
                 { text }
             </span>

@@ -5,9 +5,13 @@ div.Home {
     justify-content: center;
 
     div#container {
-        position: relative;
-
         width: 80%;
         height: 100vh;
     }
+}
+
+div.Home,
+div#container
+{
+    position: relative;
 }
