@@ -1,5 +1,9 @@
-import App from './App';
+import Header from './Header';
+import LineCard from './LineCard';
+import CardPrimary from './CardPrimary';
 
 export {
-    App,
+    Header,
+    LineCard,
+    CardPrimary
 }

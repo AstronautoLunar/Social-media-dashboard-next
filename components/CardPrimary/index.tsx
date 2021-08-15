@@ -61,7 +61,15 @@ export default function CardPrimary({
                     >{ userNickName }</span>
                 </div>
                 <div className={styles.followers}>
-                    <span className={styles.followersNumber}>{ numberFollower }</span>
+                    <span 
+                        className={styles.followersNumber}
+                    >{ 
+                        numberFollower > 10000
+                        ?
+                        `${numberFollower / 1000}k`
+                        :
+                        numberFollower
+                    }</span>
                     <span className={styles.followersType}>{ nameForNumber }</span>
                 </div>
                 <div
@@ -98,7 +106,11 @@ export default function CardPrimary({
                         }
                     </div>
                     {
+                        growth > 0
+                        ?
                         growth
+                        :
+                        growth*-1
                     } 
                     
                     Today

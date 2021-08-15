@@ -1,3 +1,13 @@
 div.Home {
     width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    div#container {
+        position: relative;
+
+        width: 80%;
+        height: 100vh;
+    }
 }
