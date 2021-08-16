@@ -3,7 +3,7 @@ import { useState } from 'react';
 import IndexPages from './IndexPages';
 import { 
   Header,
-  LineCard,
+  LineMain,
   CardPrimary
 } from '../components';
 
@@ -60,7 +60,7 @@ export default function Home() {
       <IndexPages/>
       <Header/>
       <div id={styles.container}>
-        <LineCard
+        <LineMain
           title="Social Media Dashboard"
           toggleText={true}
           smallText="Total Followers: 23,004"
@@ -82,7 +82,12 @@ export default function Home() {
               />
             ))
           }
-        </LineCard>
+        </LineMain>
+        {/* <LineCard
+          title=""
+        >
+
+        </LineCard> */}
       </div>
     </div>
   )

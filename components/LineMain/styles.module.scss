@@ -1,8 +1,8 @@
-div.LineCard {
+div.LineMain {
     flex-direction: column;
 }
 
-div.LineCard,
+div.LineMain,
 div.cards
 {
     display: flex;
@@ -17,7 +17,7 @@ div.cards {
 }
 
 @media screen and (max-width: 684px) {
-    div.LineCard {
+    div.LineMain {
         margin: 30px 0;
     }
 }

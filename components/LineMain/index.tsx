@@ -12,7 +12,7 @@ type LineCardData = {
     clickButton: () => void;
 }
 
-export default function LineCard({ 
+export default function LineMain({ 
     children, 
     title,
     toggleText,
@@ -22,7 +22,7 @@ export default function LineCard({
     clickButton
 }: LineCardData) {
     return (
-        <div className={styles.LineCard}>
+        <div className={styles.LineMain}>
             <HeaderCard
                 title={ title }
                 toggleText={ toggleText }
