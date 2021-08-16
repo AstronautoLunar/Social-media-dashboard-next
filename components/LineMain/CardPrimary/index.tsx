@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { useThemeDark } from '../../../contexts/useThemeDark';
+
 import styles from "./styles.module.scss";
 
 type CardPrimaryData = {
@@ -21,6 +23,20 @@ export default function CardPrimary({
     iconSocialNetwork, 
     altSocialNetwork
 }: CardPrimaryData) {
+    let { themeColor } = useThemeDark();
+    let [ colorCardPrimaryContent ] = themeColor({
+        colorLight: "var(--light-grayish-blue-card-bg)",
+        colorDark: "var(--dark-desaturated-blue-card-bg)"
+    })
+    let [ colorTextNormal ] = themeColor({
+        colorLight: "var(--dark-grayish-blue-text)",
+        colorDark: "var(--desaturated-blue-text)"
+    })
+    let [ colortextBold ] = themeColor({
+        colorLight: "var(--very-dark-blue-text)",
+        colorDark: "var(--white-text)"
+    })
+
     function changeTypeColorSocialNetwork(typeColorSocial: string) {
         if(typeColorSocial === "instagram") {
             return {
@@ -47,7 +63,12 @@ export default function CardPrimary({
                 className={styles.border}
                 style={changeTypeColorSocialNetwork(typeColorSocial)}
             />
-            <div className={styles.content}>
+            <div 
+                className={styles.content}
+                style={{
+                    backgroundColor: colorCardPrimaryContent
+                }}
+            >
                 <div className={styles.socialNetwork}>
                     <Image
                         width={25}
@@ -58,11 +79,17 @@ export default function CardPrimary({
 
                     <span 
                         className={styles.textUserNickName}
+                        style={{
+                            color: colorTextNormal
+                        }}
                     >{ userNickName }</span>
                 </div>
                 <div className={styles.followers}>
                     <span 
                         className={styles.followersNumber}
+                        style={{
+                            color: colortextBold,
+                        }}
                     >{ 
                         numberFollower > 10000
                         ?
@@ -70,7 +97,12 @@ export default function CardPrimary({
                         :
                         numberFollower
                     }</span>
-                    <span className={styles.followersType}>{ nameForNumber }</span>
+                    <span 
+                        className={styles.followersType}
+                        style={{
+                            color: colorTextNormal,
+                        }}
+                    >{ nameForNumber }</span>
                 </div>
                 <div
                     className={styles.growth}
@@ -111,9 +143,7 @@ export default function CardPrimary({
                         growth
                         :
                         growth*-1
-                    } 
-                    
-                    Today
+                    } Today
                 </div>
             </div>
         </div>

@@ -23,6 +23,12 @@ header.Header {
             margin-bottom: 0.2rem;
         }
         
+        h1.title,
+        h3.smallText
+        {
+            transition: all 200ms;
+        }
+
         h3.smallText {
             color: var(--dark-grayish-blue-text);
             

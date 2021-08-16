@@ -5,9 +5,7 @@ import styles from './styles.module.scss';
 type LineCardData = {
     children: JSX.Element[] | JSX.Element;
     title: string;
-    toggleText: boolean;
     smallText?: string;
-    toggleButton: boolean;
     valueButton: boolean;
     clickButton: () => void;
 }
@@ -15,9 +13,7 @@ type LineCardData = {
 export default function LineMain({ 
     children, 
     title,
-    toggleText,
-    smallText,
-    toggleButton, 
+    smallText, 
     valueButton, 
     clickButton
 }: LineCardData) {
@@ -25,9 +21,7 @@ export default function LineMain({
         <div className={styles.LineMain}>
             <HeaderCard
                 title={ title }
-                toggleText={ toggleText }
                 smallText={ smallText }
-                toggleButton={ toggleButton }
                 valueButton={ valueButton }
                 clickButton={ clickButton }
                 textButton="Dark Mode"

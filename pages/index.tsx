@@ -1,9 +1,4 @@
-import { 
-  useState, 
-  useEffect
-} from 'react';
-
-import useTheme from '../hooks/useTheme';
+import { useThemeDark } from '../contexts/useThemeDark';
 
 import IndexPages from './IndexPages';
 import { 
@@ -17,28 +12,16 @@ import {
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {
-  let [ button, setButton ] = useState(false);
-  let { theme, themeColor } = useTheme({
+  let { 
+    changeTheme, 
+    toggleTheme,
+    themeColor 
+  } = useThemeDark();
+
+  let [ colorBGTheme ] = themeColor({
     colorLight: "var(--white-bg-light-theme)",
     colorDark: "var(--very-dark-blue-bg)"
   })
-
-// var(--white-bg-light-theme)
-// var(--very-dark-blue-bg)
-
-  useEffect(() => {
-    let buttonString = "light";
-
-    if(button) {
-      buttonString = "dark";
-    } else {
-      buttonString = "light";
-    }
-
-    if(typeof window !== "undefined") {
-      localStorage.setItem('theme', buttonString)
-    }
-  }, [ button ])
 
   const cardsPrimary = [
     {
@@ -150,28 +133,22 @@ export default function Home() {
     },
   ]
 
-  // themeColor
-
+  
   return (
     <div 
-      className={
-        theme === "dark"
-        ?
-        styles.HomeDark
-        :
-        styles.HomeLight 
-      }
+      className={styles.Home}
+      style={{
+        backgroundColor: colorBGTheme
+      }}
     >
       <IndexPages/>
       <Header/>
       <div id={styles.container}>
         <LineMain
           title="Social Media Dashboard"
-          toggleText={true}
           smallText="Total Followers: 23,004"
-          toggleButton={true}
-          valueButton={ button }
-          clickButton={() => setButton(!button)}
+          valueButton={ toggleTheme }
+          clickButton={ changeTheme }
           >
           {
             cardsPrimary.map(item => (

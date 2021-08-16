@@ -1,3 +1,5 @@
+import { useThemeDark } from '../../../contexts/useThemeDark';
+
 import Image from 'next/image';
 
 import styles from './styles.module.scss';
@@ -13,14 +15,38 @@ type CardSecundaryData = {
 export default function CardSecundary({ 
     text, 
     number, 
-    iconSrc,
-    altIcon,  
-    growth
-}) {
+    iconSrc, 
+    altIcon, 
+    growth 
+}: CardSecundaryData) {
+    let { themeColor } = useThemeDark();
+    let [ colorCardSecundary ] = themeColor({
+        colorLight: "var(--light-grayish-blue-card-bg)",
+        colorDark: "var(--dark-desaturated-blue-card-bg)"
+    })
+    let [ colorText ] = themeColor({
+        colorLight: "var(--dark-grayish-blue-text)",
+        colorDark: "var(--desaturated-blue-text)"
+    })
+    let [ colorNumberText ] = themeColor({
+        colorLight: "var(--very-dark-blue-text)",
+        colorDark: "var(--white-text)"
+    })
+
     return (
-        <div className={styles.CardSecundary}>
+        <div 
+            className={styles.CardSecundary}
+            style={{
+                backgroundColor: colorCardSecundary,
+            }}
+        >
             <div className={styles.lineOne}>
-                <span className={styles.text}>{ text }</span>
+                <span 
+                    className={styles.text}
+                    style={{
+                        color: colorText,
+                    }}
+                >{ text }</span>
                 <Image
                     width={25}
                     height={25}
@@ -29,7 +55,12 @@ export default function CardSecundary({
                 />
             </div>
             <div className={styles.lineTwo}>
-                <span className={styles.number}>{ 
+                <span 
+                    className={styles.number}
+                    style={{
+                        color: colorNumberText,
+                    }}
+                >{ 
                     number > 10000
                     ?
                         `${number / 1000}k`

@@ -1,24 +1,14 @@
-div.HomeDark {
-    background-color: var(--very-dark-blue-bg);
-}
-
-div.HomeDark,
-div.HomeLight
-{
-    transition: all 200ms;
-
+div.Home {
     width: 100%;
 
     display: flex;
     justify-content: center;
 
+    transition: all 200ms;
+
     div#container {
         width: 80%;
     }
-}
-
-div.HomeLight {
-    background-color: var(--white-bg-light-theme);
 }
 
 div.Home,
