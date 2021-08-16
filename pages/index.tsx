@@ -1,4 +1,9 @@
-import { useState } from 'react';
+import { 
+  useState, 
+  useEffect
+} from 'react';
+
+import useTheme from '../hooks/useTheme';
 
 import IndexPages from './IndexPages';
 import { 
@@ -13,6 +18,27 @@ import styles from '../styles/Home.module.scss';
 
 export default function Home() {
   let [ button, setButton ] = useState(false);
+  let { theme, themeColor } = useTheme({
+    colorLight: "var(--white-bg-light-theme)",
+    colorDark: "var(--very-dark-blue-bg)"
+  })
+
+// var(--white-bg-light-theme)
+// var(--very-dark-blue-bg)
+
+  useEffect(() => {
+    let buttonString = "light";
+
+    if(button) {
+      buttonString = "dark";
+    } else {
+      buttonString = "light";
+    }
+
+    if(typeof window !== "undefined") {
+      localStorage.setItem('theme', buttonString)
+    }
+  }, [ button ])
 
   const cardsPrimary = [
     {
@@ -56,13 +82,6 @@ export default function Home() {
         altSocialNetwork: "youtube icon"
     }
   ]
-
-  // text: string;
-  // number: number;
-  // iconSrc: string;
-  // altIcon: string;
-  // growth: number;
-  // gridArea?: any;
 
   const cardsSecundary = [
     {
@@ -131,8 +150,18 @@ export default function Home() {
     },
   ]
 
+  // themeColor
+
   return (
-    <div className={styles.Home}>
+    <div 
+      className={
+        theme === "dark"
+        ?
+        styles.HomeDark
+        :
+        styles.HomeLight 
+      }
+    >
       <IndexPages/>
       <Header/>
       <div id={styles.container}>

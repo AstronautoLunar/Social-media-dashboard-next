@@ -1,4 +1,12 @@
-div.Home {
+div.HomeDark {
+    background-color: var(--very-dark-blue-bg);
+}
+
+div.HomeDark,
+div.HomeLight
+{
+    transition: all 200ms;
+
     width: 100%;
 
     display: flex;
@@ -7,6 +15,10 @@ div.Home {
     div#container {
         width: 80%;
     }
+}
+
+div.HomeLight {
+    background-color: var(--white-bg-light-theme);
 }
 
 div.Home,
