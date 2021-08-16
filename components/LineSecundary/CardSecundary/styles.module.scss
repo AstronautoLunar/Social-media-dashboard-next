@@ -1,0 +1,85 @@
+div.CardSecundary {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    padding: 2rem;
+
+    background-color: var(--light-grayish-blue-card-bg);
+
+    border-radius: 0.5rem;
+
+    height: 10rem;
+
+    div.lineOne {
+
+        span.text {
+            color: var(--dark-grayish-blue-text);
+
+            font-weight: 700;
+        }
+    }
+
+    div.lineTwo {
+
+        span.number {
+            font-weight: 700;
+            font-size: 2.5rem;
+            line-height: 2.55rem;
+        }
+    }
+}
+
+div.CardSecundary,
+div.lineOne,
+div.lineTwo,
+div.growth,
+div.growthImage
+{
+    display: flex;
+}
+
+div.CardSecundary,
+div.lineOne,
+div.lineTwo
+{
+    justify-content: space-between;
+}
+
+div.lineOne,
+div.lineTwo
+{
+
+    width: 100%;
+}
+
+div.lineOne {
+    align-items: flex-start;
+}
+
+div.lineTwo {
+    align-items: flex-end;
+}
+
+div.growth {
+    justify-content: center;
+    align-items: center;
+
+    div.growthImage {
+        margin-right: 0.5rem;
+    }
+}
+
+div.growth,
+div.growthImage
+{
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1036px) {
+    div.CardSecundary {
+        width: 100%;
+    }
+}

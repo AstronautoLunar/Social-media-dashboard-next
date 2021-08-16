@@ -4,7 +4,9 @@ import IndexPages from './IndexPages';
 import { 
   Header,
   LineMain,
-  CardPrimary
+  LineSecundary,
+  CardPrimary,
+  CardSecundary
 } from '../components';
 
 import styles from '../styles/Home.module.scss';
@@ -55,6 +57,80 @@ export default function Home() {
     }
   ]
 
+  // text: string;
+  // number: number;
+  // iconSrc: string;
+  // altIcon: string;
+  // growth: number;
+  // gridArea?: any;
+
+  const cardsSecundary = [
+    {
+      id: 1,
+      text: "Page Views",
+      number: 87,
+      iconSrc: "/icon-facebook.svg",
+      altSrc: "icon facebook",
+      growth: 3
+    },
+    {
+      id: 2,
+      text: "Likes",
+      number: 52,
+      iconSrc: "/icon-facebook.svg",
+      altSrc: "icon facebook",
+      growth: -2
+    },
+    {
+      id: 3,
+      text: "Likes",
+      number: 5462,
+      iconSrc: "/icon-instagram.svg",
+      altSrc: "icon instagram",
+      growth: 2257
+    },
+    {
+      id: 4,
+      text: "Profile Views",
+      number: 52000,
+      iconSrc: "/icon-instagram.svg",
+      altSrc: "icon instagram",
+      growth: 1375
+    },
+    {
+      id: 5,
+      text: "Retweets",
+      number: 117,
+      iconSrc: "/icon-twitter.svg",
+      altSrc: "icon twitter",
+      growth: 303
+    },
+    {
+      id: 6,
+      text: "Likes",
+      number: 507,
+      iconSrc: "/icon-twitter.svg",
+      altSrc: "icon twitter",
+      growth: 553
+    },
+    {
+      id: 7,
+      text: "Likes",
+      number: 107,
+      iconSrc: "/icon-youtube.svg",
+      altSrc: "icon youtube",
+      growth: -19
+    },
+    {
+      id: 8,
+      text: "Total Views",
+      number: 1407,
+      iconSrc: "/icon-youtube.svg",
+      altSrc: "icon youtube",
+      growth: -12
+    },
+  ]
+
   return (
     <div className={styles.Home}>
       <IndexPages/>
@@ -83,11 +159,22 @@ export default function Home() {
             ))
           }
         </LineMain>
-        {/* <LineCard
-          title=""
+        <LineSecundary
+          title="Overviem - Today"
         >
-
-        </LineCard> */}
+          {
+            cardsSecundary.map(item => (
+              <CardSecundary
+                key={item.id}
+                text={item.text}
+                number={item.number}
+                iconSrc={item.iconSrc}
+                altIcon={item.altSrc}
+                growth={item.growth}
+              />
+            ))
+          }
+        </LineSecundary>
       </div>
     </div>
   )
