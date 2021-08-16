@@ -49,7 +49,15 @@ a {
   --dark-grayish-blue-text: hsl(228, 12%, 44%);
   --very-dark-blue-text: hsl(230, 17%, 14%);
 
+  // Extra
+
   // icons growth for cards primary
   --green-icon-up: #1EB589;
   --red-icon-down: #DC414C;
+
+  // active Dark Theme
+  --active-dark-theme-card: hsl(228, 28%, 25%);
+
+  // active Light Theme
+  --active-light-Theme-card: hsl(227, 47%, 91%);
 }

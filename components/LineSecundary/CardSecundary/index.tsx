@@ -1,3 +1,5 @@
+import useActiveTheme from '../../../hooks/useActiveTheme';
+
 import { useThemeDark } from '../../../contexts/useThemeDark';
 
 import Image from 'next/image';
@@ -33,12 +35,20 @@ export default function CardSecundary({
         colorDark: "var(--white-text)"
     })
 
+    let [ cardSecundaryRef ] = useActiveTheme({
+        colorDarkMouseMove: "var(--active-dark-theme-card)",
+        colorDarkMouseOut: "var(--dark-desaturated-blue-card-bg)",
+        colorLightMouseMove: "var(--active-light-Theme-card)",
+        colorLightMouseOut: "var(--light-grayish-blue-card-bg)"
+    })
+
     return (
         <div 
             className={styles.CardSecundary}
             style={{
                 backgroundColor: colorCardSecundary,
             }}
+            ref={ cardSecundaryRef }
         >
             <div className={styles.lineOne}>
                 <span 

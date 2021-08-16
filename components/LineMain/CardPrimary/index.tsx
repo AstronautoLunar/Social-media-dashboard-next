@@ -1,3 +1,5 @@
+import useActiveTheme from '../../../hooks/useActiveTheme';
+
 import Image from 'next/image';
 
 import { useThemeDark } from '../../../contexts/useThemeDark';
@@ -24,6 +26,14 @@ export default function CardPrimary({
     altSocialNetwork
 }: CardPrimaryData) {
     let { themeColor } = useThemeDark();
+
+    let [ contentRef ] = useActiveTheme({
+        colorDarkMouseMove: "var(--active-dark-theme-card)",
+        colorDarkMouseOut: "var(--dark-desaturated-blue-card-bg)",
+        colorLightMouseMove: "var(--active-light-Theme-card)",
+        colorLightMouseOut: "var(--light-grayish-blue-card-bg)"
+    })
+
     let [ colorCardPrimaryContent ] = themeColor({
         colorLight: "var(--light-grayish-blue-card-bg)",
         colorDark: "var(--dark-desaturated-blue-card-bg)"
@@ -68,6 +78,7 @@ export default function CardPrimary({
                 style={{
                     backgroundColor: colorCardPrimaryContent
                 }}
+                ref={ contentRef }
             >
                 <div className={styles.socialNetwork}>
                     <Image

@@ -15,7 +15,7 @@ export default function LineSecundary({
     let [ colorTitle ] = themeColor({
         colorLight: "var(--very-dark-blue-text)",
         colorDark: "var(--white-text)"
-    })
+    });
 
     return (
         <div id={styles.LineSecundary}>
