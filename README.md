@@ -11,7 +11,7 @@
 
 * [Sobre](#Sobre)
 * [Pre Requisitos](#Pre-requisitos)
-* [Como usar](#Como-user)
+* [Como usar](#Como-usar)
 * [Tecnologias](#tecnologias)
 
 <h4 align="center">
