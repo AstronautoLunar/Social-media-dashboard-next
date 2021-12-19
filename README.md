@@ -11,6 +11,7 @@
 
 * [Sobre](#Sobre)
 * [Pre Requisitos](#Pre-requisitos)
+* [Como usar](#Como-user)
 * [Tecnologias](#tecnologias)
 
 <h4 align="center">
@@ -31,6 +32,8 @@ Precisará também ter o node.js e algum gerenciador de pacote através desses l
 Gerenciador de pacotes
 * [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
 * [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
+## Como usar
 
 ### Copie e cole no seu GIT
 ```
