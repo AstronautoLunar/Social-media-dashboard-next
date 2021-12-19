@@ -1,5 +1,12 @@
 <h1 align="center">Social Media Dashboard</h1>
 
+<div align="center">
+ <img
+      src="https://github.com/Pyedrown/Social-media-dashboard-next/blob/main/presentation.PNG"
+      alt="presentation image"
+ />
+</div>
+
 <p align="center">Solução da plataforma Front-end-mentor</p>
 
 * [Sobre](#Sobre)
